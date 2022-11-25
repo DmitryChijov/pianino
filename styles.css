@@ -17,9 +17,11 @@ html {
     height: 290px;
     margin: 80px auto;
     padding: 90px 20px 0 20px;
-
+    position: relative;
+    border-radius: 10px;
 }
 
+/* добавляем черный фон для белых клавишь */
 .keys {
     background-color: #040404;
     width: 949px;
@@ -27,6 +29,7 @@ html {
     padding-left: 2px;
 }
 
+/* добавляем белые клавиши */
 .key {
     background-color: #ffffff;
     position: relative;
@@ -34,4 +37,26 @@ html {
     height: 175px;
     margin: 2px;
     float: left;
+    border-radius: 0 0 3px 3px;
+}
+
+/* добавляем черные клавиши с помощью псевдоселектора */
+.key.black--key::after {
+    background-color: #1d1e22;
+    content: ""; 
+    position: absolute;
+    left: -18px;
+    width: 32px;
+    height: 100px;
+    border-radius: 0 0 3px 3px;
+ } 
+ /* Властивість content використовують для 
+    встановлення або заміни вмісту елемента. 
+    порожній рядок "", елемент буде зображено на сторінці, 
+     але досі буде порожнім.*/
+
+.logo {
+    width: 200px;
+    position: absolute;
+    top: 23px;
 }
